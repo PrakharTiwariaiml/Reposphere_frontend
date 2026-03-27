@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ── Custom theme tokens ── */
+@theme {
+  --color-neon: #B9FF66;
+  --color-dark: #191A23;
+  --color-neutral: #F3F3F3;
+
+  --font-sans: 'Space Grotesk', sans-serif;
+
+  --radius-card: 45px;
+}
+
+/* ── Base resets ── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-neutral text-dark font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-neon text-dark;
+  }
+}
+
+/* ── Neo-brutalist utility classes ── */
+@layer components {
+  .neo-border {
+    border-width: 2px;
+    border-color: #191A23;
+  }
+
+  .neo-shadow {
+    box-shadow: 4px 4px 0 0 #191A23;
+  }
+
+  .neo-shadow-lg {
+    box-shadow: 6px 6px 0 0 #191A23;
+  }
+
+  .neo-btn {
+    border-width: 2px;
+    border-color: #191A23;
+    box-shadow: 4px 4px 0 0 #191A23;
+    @apply px-6 py-3 font-bold transition-all duration-150 cursor-pointer;
+  }
+
+  .neo-btn:hover {
+    box-shadow: 2px 2px 0 0 #191A23;
+    transform: translate(2px, 2px);
+  }
+
+  .neo-btn:active {
+    box-shadow: 0 0 0 0 #191A23;
+    transform: translate(4px, 4px);
+  }
+
+  .badge {
+    @apply inline-block px-3 py-1 text-sm font-bold rounded-md;
+  }
+
+  .badge-green {
+    @apply inline-block px-3 py-1 text-sm font-bold rounded-md;
+    background-color: #B9FF66;
+    color: #191A23;
+  }
+
+  .badge-white {
+    @apply inline-block px-3 py-1 text-sm font-bold rounded-md;
+    background-color: #fff;
+    color: #191A23;
+  }
+
+  .badge-dark {
+    @apply inline-block px-3 py-1 text-sm font-bold rounded-md;
+    background-color: #191A23;
+    color: #fff;
+  }
+}
