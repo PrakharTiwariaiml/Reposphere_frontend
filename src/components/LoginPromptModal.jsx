@@ -1,4 +1,5 @@
 import { X, Lock, LogIn } from 'lucide-react';
+import { BASE_SERVER_URL } from '../api/api';
 
 /**
  * A sleek, neo-brutalist modal to prompt users to login.
@@ -35,7 +36,7 @@ export default function LoginPromptModal({ isOpen, onClose }) {
 
           <div className="flex w-full flex-col gap-4 mt-4">
             <a
-              href="http://localhost:8082/oauth2/authorization/google"
+              href={`${BASE_SERVER_URL}/oauth2/authorization/google`}
               className="neo-btn flex items-center justify-center gap-2 rounded-xl bg-dark py-4 text-white hover:bg-neon hover:text-dark transition-all duration-300 font-bold"
             >
               <LogIn size={20} />

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchPublicNotes, fetchCurrentUser } from '../api/api';
+import { fetchPublicNotes, fetchCurrentUser, BASE_SERVER_URL } from '../api/api';
 import { FileText, Loader2, Globe, ExternalLink, Lock } from 'lucide-react';
 
 /**
@@ -81,7 +81,7 @@ export default function ExploreSection() {
               Log in to see our public repositories, shared notes, and campus resources.
             </p>
             <a
-              href="http://localhost:8082/oauth2/authorization/google"
+              href={`${BASE_SERVER_URL}/oauth2/authorization/google`}
               className="neo-btn rounded-xl bg-neon px-8 py-3 text-lg font-bold shadow-lg hover:-translate-y-1 transition-transform"
             >
               Login with Google to View

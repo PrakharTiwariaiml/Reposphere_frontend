@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, LayoutDashboard, LogOut } from 'lucide-react';
-import { fetchCurrentUser, logout } from '../api/api';
+import { fetchCurrentUser, logout, BASE_SERVER_URL } from '../api/api';
 
 const navLinks = [
   { label: 'Explore', href: '/' },
@@ -70,7 +70,7 @@ export default function Header() {
             </div>
           ) : (
             <a
-              href="http://localhost:8082/oauth2/authorization/google"
+              href={`${BASE_SERVER_URL}/oauth2/authorization/google`}
               className="neo-btn rounded-xl bg-neon hover:brightness-95 text-sm font-semibold"
               id="login-btn"
             >
@@ -123,7 +123,7 @@ export default function Header() {
             </>
           ) : (
             <a
-              href="http://localhost:8082/oauth2/authorization/google"
+              href={`${BASE_SERVER_URL}/oauth2/authorization/google`}
               className="neo-btn w-full rounded-xl bg-neon hover:brightness-95 text-center text-sm font-semibold"
               id="login-btn-mobile"
               onClick={() => setMobileOpen(false)}
